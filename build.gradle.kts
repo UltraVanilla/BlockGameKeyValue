@@ -33,10 +33,28 @@ java {
 spotless {
     isEnforceCheck = false
     encoding("UTF-8")
+    format("misc") {
+        target(".gitignore", "README.md")
+        leadingTabsToSpaces()
+        endWithNewline()
+        trimTrailingWhitespace()
+    }
     java {
-        eclipse().configFile(".settings/eclipse-formatter-profile.xml")
+        target("**/*.java")
+        leadingTabsToSpaces()
+        endWithNewline()
+        trimTrailingWhitespace()
+        removeUnusedImports()
+        palantirJavaFormat()
+    }
+    kotlinGradle {
+        ktfmt().googleStyle()
+        leadingTabsToSpaces()
+        endWithNewline()
+        trimTrailingWhitespace()
     }
 }
+
 
 publishing {
     publications {

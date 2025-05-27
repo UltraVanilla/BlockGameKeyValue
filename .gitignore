@@ -306,5 +306,3 @@ gradle-app.setting
 
 run/
 kls_database.db
-!.settings/
-.settings/org.eclipse.buildship.core.prefs
