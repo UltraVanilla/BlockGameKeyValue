@@ -2,7 +2,6 @@ package josie.blockgamekeyvalue;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-
 import josie.blockgamekeyvalue.exceptions.DataTooLongException;
 import josie.blockgamekeyvalue.exceptions.InvalidColumnCountException;
 import josie.blockgamekeyvalue.exceptions.InvalidKeyException;
@@ -66,7 +65,7 @@ public class BlockGameKeyValue {
 
     private static String unescape(String input) {
         final var sb = new StringBuilder(input.length());
-        for (var i = 0; i < input.length();) {
+        for (var i = 0; i < input.length(); ) {
             final var character = input.charAt(i);
             if (character == '\\' && i + 1 < input.length()) {
                 final var next = input.charAt(i + 1);
@@ -92,8 +91,7 @@ public class BlockGameKeyValue {
     private static boolean isValidVariableName(String string) {
         for (var i = 0; i < string.length(); ++i) {
             final var character = string.charAt(i);
-            if (Character.isLetterOrDigit(character) || character == '_')
-                continue;
+            if (Character.isLetterOrDigit(character) || character == '_') continue;
             return false;
         }
         return true;

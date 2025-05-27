@@ -1,11 +1,11 @@
 package josie.blockgamekeyvalue;
 
-import org.junit.jupiter.api.Test;
-import josie.blockgamekeyvalue.exceptions.ParseException;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BlockGameKeyValueTest {
+import josie.blockgamekeyvalue.exceptions.ParseException;
+import org.junit.jupiter.api.Test;
 
+public class BlockGameKeyValueTest {
     @Test
     public void testSingleEntry() throws ParseException {
         var input = "key\tvalue";
@@ -142,7 +142,12 @@ public class BlockGameKeyValueTest {
         var longString2 = "v".repeat(2000);
         var sb = new StringBuilder();
         for (var i = 0; i < 4; i++) {
-            sb.append(longString1).append(i).append("\t").append(longString2).append(i).append("\n");
+            sb.append(longString1)
+                    .append(i)
+                    .append("\t")
+                    .append(longString2)
+                    .append(i)
+                    .append("\n");
         }
         sb.setLength(sb.length() - 1);
         var result = BlockGameKeyValue.parse(sb.toString());
