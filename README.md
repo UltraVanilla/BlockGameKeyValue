@@ -1,5 +1,7 @@
 # BlockGameKeyValue
 
+**Obsolete:** Mojang is no longer using this format as of 1.21.6-pre1. So this will never be needed.
+
 Java library to parse Mojang's strange custom TSV format.
 
 ## Get it
